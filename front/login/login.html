@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lumière | Acesso</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            LUMIÈRE
+        </div>
+
+    </header>
+
+
+    <main class="container-master">
+
+        <section class="form-esquerda">
+
+            <h2>Acesso ao Sistema</h2>
+            <p>Entre com seus dados para acessar o gerenciamento.</p>
+
+            <label for="inputCPF_Pessoa">CPF</label>
+            <input type="text" name="inputCPF_Pessoa" id="inputCPF_Pessoa" placeholder="Ex: 12345678901" maxlength="11">
+
+
+            <label for="inputSenha_Pessoa">Senha</label>
+            <input type="password" name="inputSenha_Pessoa" id="inputSenha_Pessoa" placeholder="Digite sua senha">
+
+
+            <input type="button" value="ENTRAR" id="btEntrar" onclick="entrar()">
+
+
+            <div id="divAviso"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>Lumière</p>
+        <p>Yasmin Oliveira da Silva | DW1 | M32 | 2026</p>
+
+    </footer>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

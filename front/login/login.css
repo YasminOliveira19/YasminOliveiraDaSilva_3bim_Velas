@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #f8f4ef;
+    color: #493b36;
+}
+
+/* Cabeçalho */
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f4ef;
+}
+
+.logo {
+    font-size: 26px;
+    letter-spacing: 5px;
+    color: #4d403b;
+}
+
+/* Login */
+
+main {
+    width: 85%;
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.form-esquerda {
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.form-esquerda h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.form-esquerda p {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #756a65;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #d8ccc6;
+    background-color: #faf8f6;
+}
+
+#btEntrar {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background-color: #e8cfc4;
+    color: #493b36;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#btEntrar:hover {
+    background-color: #d9b8aa;
+}
+
+#divAviso {
+    margin-top: 15px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #756a65;
+}
+
+/* Rodapé */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background-color: #493b36;
+    color: #f8f4ef;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+}

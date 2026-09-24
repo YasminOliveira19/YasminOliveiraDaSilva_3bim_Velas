@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #f8f4ef;
+    color: #493b36;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    position: relative;
+    padding: 25px 20px;
+    text-align: center;
+    background-color: #f8f4ef;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    color: #75635b;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #493b36;
+}
+
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.container-master {
+    width: 85%;
+    max-width: 1100px;
+    margin: 25px auto 0;
+}
+
+
+/* =========================
+   ÁREA DO FORMULÁRIO
+========================= */
+
+.conteudo-principal {
+    padding: 45px;
+    background-color: #ffffff;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.form-esquerda {
+    width: 100%;
+}
+
+.form-esquerda h2 {
+    font-size: 23px;
+    font-weight: normal;
+
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #e8cfc4;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.form-esquerda label {
+    display: block;
+
+    margin-top: 18px;
+    margin-bottom: 8px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    color: #756a65;
+}
+
+.form-esquerda input[type="text"] {
+    width: 100%;
+    height: 42px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d9c3ba;
+
+    background-color: #f8f4ef;
+    color: #493b36;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.form-esquerda input[type="text"]:focus {
+    border-color: #b99b8e;
+}
+
+.form-esquerda input[type="password"] {
+    width: 100%;
+    height: 42px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d9c3ba;
+
+    background-color: #f8f4ef;
+    color: #493b36;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.form-esquerda input[type="password"]:focus {
+    border-color: #b99b8e;
+}
+
+.form-esquerda input[type="email"] {
+    width: 100%;
+    height: 42px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d9c3ba;
+
+    background-color: #f8f4ef;
+    color: #493b36;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.form-esquerda input[type="email"]:focus {
+    border-color: #b99b8e;
+}
+
+
+/* =========================
+   CPF + PROCURAR
+========================= */
+
+.linha-id {
+    display: flex;
+    gap: 10px;
+}
+
+.linha-id input[type="text"] {
+    flex: 1;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+input[type="button"] {
+    padding: 11px 20px;
+
+    border: none;
+
+    background-color: #856464;
+    color: #f8f4ef;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+input[type="button"]:hover {
+    background-color: #977167;
+}
+
+
+/* BOTÃO PROCURAR */
+
+#btProcure {
+    white-space: nowrap;
+}
+
+
+/* BOTÃO EXCLUIR */
+
+#btExcluir {
+    background-color: #493b36;
+    color: #f8f4ef;
+}
+
+#btExcluir:hover {
+    background-color: #5f5049;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+#divAviso {
+    margin-top: 25px;
+    padding: 14px;
+
+    background-color: #f8f4ef;
+
+    border-left: 3px solid #d9b8aa;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    color: #756a65;
+}
+
+
+/* =========================
+   BOTÕES SALVAR / CANCELAR
+========================= */
+
+.botoes-acao {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   LISTAGEM
+========================= */
+
+.lista-Cliente {
+    margin-top: 30px;
+    padding: 35px;
+
+    background-color: #ffffff;
+}
+
+.lista-Cliente h3 {
+    font-size: 22px;
+    font-weight: normal;
+
+    margin-bottom: 20px;
+}
+
+#outputSaida {
+    padding: 20px;
+
+    background-color: #f8f4ef;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+
+    color: #756a65;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    margin-top: 30px;
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #493b36;
+    color: #f8f4ef;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        position: static;
+        transform: none;
+
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin-top: 20px;
+    }
+
+    .container-master {
+        width: 95%;
+    }
+
+    .conteudo-principal {
+        padding: 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .form-esquerda h2 {
+        font-size: 21px;
+    }
+
+    .conteudo-principal {
+        padding: 25px 20px;
+    }
+
+    .linha-id {
+        flex-direction: column;
+    }
+
+    #btProcure {
+        width: 100%;
+    }
+
+    .botoes-acao {
+        flex-direction: column;
+    }
+
+    .botoes-acao input {
+        width: 100%;
+    }
+}
