@@ -83,7 +83,9 @@ function inserir() {
 function alterar() {
     bloquearAtributos(false);
     // CPF não pode ser alterado
+    // Senha não pode ser alterado
     document.getElementById("inputCPF_Pessoa").readOnly = true;
+    document.getElementById("inputSenha_Pessoa").readOnly = true;
     visibilidadeDosBotoes(
         'none',
         'none',
