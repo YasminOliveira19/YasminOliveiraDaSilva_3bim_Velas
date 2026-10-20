@@ -6,6 +6,7 @@ let produto = null;
 bloquearAtributos(true);
 
 async function inicializar() {
+    await carregarCategoria();
     await listar();
 }
 
@@ -255,4 +256,28 @@ function visibilidadeDosBotoes(btP, btI, btA, btE, btS) {
     document.getElementById("btExcluir").style.display = btE;
     document.getElementById("btSalvar").style.display = btS;
     document.getElementById("btCancelar").style.display = btS;
+}
+
+async function carregarCategoria() {
+    const select = document.getElementById("inputCategoria_produto");
+
+    try {
+        const resposta = await fetch(`${URL_API}/categoria/listar`);
+        const data = await resposta.json();
+
+        if (data.sucesso) {
+            select.innerHTML = '<option value="">-- Selecione uma Categoria --</option>';
+
+            data.categorias.forEach(categoria => {
+                select.innerHTML += `
+                    <option value="${categoria.id_categoria}">
+                        ${categoria.id_categoria} - ${categoria.nome_categoria}
+                    </option>
+                `;
+            });
+        }
+    } catch (erro) {
+        console.error("Erro ao carregar categorias:", erro);
+        select.innerHTML = '<option value="">Erro ao carregar categorias</option>';
+    }
 }

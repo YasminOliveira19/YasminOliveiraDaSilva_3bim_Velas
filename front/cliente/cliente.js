@@ -83,9 +83,7 @@ function inserir() {
 function alterar() {
     bloquearAtributos(false);
     // CPF não pode ser alterado
-    // Senha não pode ser alterado
     document.getElementById("inputCPF_Pessoa").readOnly = true;
-    document.getElementById("inputSenha_Pessoa").readOnly = true;
     visibilidadeDosBotoes(
         'none',
         'none',
@@ -119,13 +117,11 @@ function excluir() {
 async function salvar() {
     const cpf_pessoa = document.getElementById("inputCPF_Pessoa").value;
     const nome_pessoa = document.getElementById("inputNome_Pessoa").value;
-    const senha_pessoa = document.getElementById("inputSenha_Pessoa").value;
     const email_pessoa = document.getElementById("inputEmail_Pessoa").value;
 
     const dadosCliente = {
         cpf_pessoa,
         nome_pessoa,
-        senha_pessoa,
         email_pessoa
     };
 
@@ -269,7 +265,6 @@ function mostrarAviso(mensagem) {
 function mostrarDadosCliente(p) {
     document.getElementById("inputCPF_Pessoa").value = p.cpf_pessoa;
     document.getElementById("inputNome_Pessoa").value = p.nome_pessoa;
-    document.getElementById("inputSenha_Pessoa").value = p.senha_pessoa;
     document.getElementById("inputEmail_Pessoa").value = p.email_pessoa;
     bloquearAtributos(true);
 }
@@ -279,7 +274,6 @@ function limparAtributos() {
     cliente = null;
     oQueEstaFazendo = '';
     document.getElementById("inputNome_Pessoa").value = "";
-    document.getElementById("inputSenha_Pessoa").value = "";
     document.getElementById("inputEmail_Pessoa").value = "";
     bloquearAtributos(true);
 }
@@ -288,7 +282,6 @@ function limparAtributos() {
 function bloquearAtributos(soLeitura) {
     document.getElementById("inputCPF_Pessoa").readOnly = !soLeitura;
     document.getElementById("inputNome_Pessoa").readOnly = soLeitura;
-    document.getElementById("inputSenha_Pessoa").readOnly = soLeitura;
     document.getElementById("inputEmail_Pessoa").readOnly = soLeitura;
 }
 

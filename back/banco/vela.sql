@@ -3,7 +3,7 @@
 -- VELAS AROMÁTICAS
 -- ==========================================
 
-DROP TABLE IF EXISTS funcionario, cliente, pessoa, cargo, produto, categoria, unidade_medida, forma_pagamento;
+DROP TABLE IF EXISTS funcionario, cliente, pessoa, cargo, produto, categoria, unidade_medida;
 
 
 -- =========================================================
@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS funcionario, cliente, pessoa, cargo, produto, categoria, un
 CREATE TABLE pessoa (
     cpf_pessoa VARCHAR(11) PRIMARY KEY,
     nome_pessoa VARCHAR(100) NOT NULL,
-    senha_pessoa VARCHAR(100) NOT NULL,
+    senha_pessoa VARCHAR(100) ,
     email_pessoa VARCHAR(100) NOT NULL
 );
 
@@ -120,16 +120,16 @@ CREATE TABLE produto (
 INSERT INTO pessoa
 (cpf_pessoa, nome_pessoa, senha_pessoa, email_pessoa)
 VALUES
-('12345678901', 'Ana Souza', '123456', 'ana@email.com'),
-('23456789012', 'Bruno Lima', '123456', 'bruno@email.com'),
-('34567890123', 'Carla Mendes', '123456', 'carla@email.com'),
-('45678901234', 'Daniel Rocha', '123456', 'daniel@email.com'),
-('56789012345', 'Eduarda Alves', '123456', 'eduarda@email.com'),
-('67890123456', 'Felipe Santos', '123456', 'felipe@email.com'),
-('78901234567', 'Gabriela Costa', '123456', 'gabriela@email.com'),
-('89012345678', 'Henrique Martins', '123456', 'henrique@email.com'),
-('90123456789', 'Isabela Ferreira', '123456', 'isabela@email.com'),
-('01234567890', 'João Oliveira', '123456', 'joao@email.com'),
+('12345678901', 'Ana Souza', NUll, 'ana@email.com'),
+('23456789012', 'Bruno Lima', NUll, 'bruno@email.com'),
+('34567890123', 'Carla Mendes', NUll, 'carla@email.com'),
+('45678901234', 'Daniel Rocha', NUll, 'daniel@email.com'),
+('56789012345', 'Eduarda Alves', NUll, 'eduarda@email.com'),
+('67890123456', 'Felipe Santos', NUll, 'felipe@email.com'),
+('78901234567', 'Gabriela Costa', NUll, 'gabriela@email.com'),
+('89012345678', 'Henrique Martins', NUll, 'henrique@email.com'),
+('90123456789', 'Isabela Ferreira', NUll, 'isabela@email.com'),
+('01234567890', 'João Oliveira', NUll, 'joao@email.com'),
 
 ('11223344556', 'Karen Rodrigues', '123456', 'karen@email.com'),
 ('22334455667', 'Lucas Pereira', '123456', 'lucas@email.com'),
@@ -403,3 +403,4 @@ INNER JOIN categoria c
 INNER JOIN unidade_medida u
     ON p.id_unidade_medida = u.id_unidade_medida
 ORDER BY p.id_produto;
+

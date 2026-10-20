@@ -7,7 +7,6 @@ exports.listarClientes = async (req, res) => {
             SELECT
                 p.cpf_pessoa,
                 p.nome_pessoa,
-                p.senha_pessoa,
                 p.email_pessoa
             FROM cliente c
             INNER JOIN pessoa p
@@ -40,7 +39,6 @@ exports.obterCliente = async (req, res) => {
             SELECT
                 p.cpf_pessoa,
                 p.nome_pessoa,
-                p.senha_pessoa,
                 p.email_pessoa
             FROM cliente c
             INNER JOIN pessoa p
@@ -74,35 +72,32 @@ exports.obterCliente = async (req, res) => {
 // Criar cliente
 exports.criarCliente = async (req, res) => {
     try {
-        const {
-            cpf_pessoa,
-            nome_pessoa,
-            senha_pessoa,
-            email_pessoa
-        } = req.body;
+      const {
+    cpf_pessoa,
+    nome_pessoa,
+    email_pessoa
+} = req.body;
 
-        if (!cpf_pessoa || !nome_pessoa || !senha_pessoa || !email_pessoa) {
-            return res.status(400).json({
-                sucesso: false,
-                mensagem: 'Todos os campos são obrigatórios.'
-            });
-        }
+if (!cpf_pessoa || !nome_pessoa || !email_pessoa) {
+    return res.status(400).json({
+        sucesso: false,
+        mensagem: 'CPF, nome e e-mail são obrigatórios.'
+    });
+}
 
-        // Primeiro cria a pessoa
-        await query(`
-            INSERT INTO pessoa (
-                cpf_pessoa,
-                nome_pessoa,
-                senha_pessoa,
-                email_pessoa
-            )
-            VALUES ($1, $2, $3, $4)
-        `, [
-            cpf_pessoa,
-            nome_pessoa,
-            senha_pessoa,
-            email_pessoa
-        ]);
+await query(`
+    INSERT INTO pessoa (
+        cpf_pessoa,
+        nome_pessoa,
+        senha_pessoa,
+        email_pessoa
+    )
+    VALUES ($1, $2, NULL, $3)
+`, [
+    cpf_pessoa,
+    nome_pessoa,
+    email_pessoa
+]);
 
         // Depois identifica essa pessoa como cliente
         const result = await query(`
@@ -135,7 +130,6 @@ exports.atualizarCliente = async (req, res) => {
 
         const {
             nome_pessoa,
-            senha_pessoa,
             email_pessoa
         } = req.body;
 
@@ -143,18 +137,16 @@ exports.atualizarCliente = async (req, res) => {
             UPDATE pessoa
             SET
                 nome_pessoa = $1,
-                senha_pessoa = $2,
-                email_pessoa = $3
-            WHERE cpf_pessoa = $4
+                email_pessoa = $2
+            WHERE cpf_pessoa = $3
             AND EXISTS (
                 SELECT 1
                 FROM cliente
-                WHERE pessoa_cpf_pessoa = $4
+                WHERE pessoa_cpf_pessoa = $3
             )
             RETURNING *
         `, [
             nome_pessoa,
-            senha_pessoa,
             email_pessoa,
             cpf
         ]);
