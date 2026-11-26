@@ -10,19 +10,24 @@
     <link rel="stylesheet" href="clientes.css">
 </head>
 
-<body onload="listar()">
+<body onload="inicializar()">
 
     <header>
 
         <div class="logo">
-            Cadastro de Clientes
+            Clientes Cadastrados
         </div>
 
         <nav>
-            <a href="../menu/menu.html">Início</a>
-            <a href="../produto/produtos.html">Produtos</a>
-            <a href="../categoria/categorias.html">Categorias</a>
-            <a href="../cliente/clientes.html">Clientes</a>
+            <a href="../../Visão ADM/produto/produtos.html">Produtos</a>
+            <a href="../../Visão ADM/categoria/categorias.html">Categorias</a>
+            <a href="../../Visão ADM/cliente/clientes.html">Clientes</a>
+            <a href="../../Visão ADM/pedido/pedido.html">Pedidos</a>
+            <a href="../../Visão ADM/funcionarios/funcionarios.html">Funcionários</a>
+            <a href="../../login/login.html" id="linkConta" aria-label="Login">
+                    👤 <span id="textoConta">Login</span>
+                </a>
+
         </nav>
 
     </header>
@@ -31,35 +36,7 @@
     <!-- Conteúdo Principal -->
     <main class="container-master">
         
-        <div class="conteudo-principal">
-            <!-- Seção do Formulário -->
-            <section class="form-esquerda">
-                <h2>Dados da Pessoa</h2>
-                
-                <label for="inputCPF_Pessoa">CPF </label>
-                <div class="linha-id">
-                    <input type="text" name="inputCPF_Pessoa" id="inputCPF_Pessoa" placeholder="Ex: 12345678901">
-                    <input type="button" value="Procure" id="btProcure" onclick="procure()">
-                    <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
-                    <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
-                    <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
-                </div>
-
-                  <label for="inputNome_Pessoa">Nome</label>
-                <input type="text" name="inputNome_Pessoa" id="inputNome_Pessoa">
-
-                <label for="inputEmail_Pessoa">E-mail</label>
-                <input type="email" name="inputEmail_Pessoa" id="inputEmail_Pessoa">
-
-                <div id="divAviso">Informe o CPF e clique em Procure</div>
-
-                <div class="botoes-acao">
-                    <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
-                    <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
-                </div>
-            </section>
-        </div>
-
+        
         <!-- Seção da Listagem -->
         <section class="lista-Cliente">
             <h3>Clientes Cadastrados</h3>
